@@ -1,0 +1,27 @@
+.hamburger-menu-container {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  background: rgb(241, 244, 248);
+}
+
+.hamburger-menu-container-expanded {
+  /* position: absolute;
+  top: 113px;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #181818; */
+  position: absolute;
+  right: 0;
+  top: 7%;
+  align-items: center;
+  background: rgb(241, 244, 248);
+  z-index: 1000;
+}

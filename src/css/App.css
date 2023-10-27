@@ -1,0 +1,60 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-container {
+  background-color: hwb(0 100% 0%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-container {
+  justify-content: flex-start;
+}
+
+.user-options-container > * {
+  margin-top: auto;
+}
+
+.table-container {
+  overflow-y: auto; /* Add a vertical scrollbar when content overflows */
+  max-height: calc(
+    100vh - 90px
+  ); /* Calculate the maximum height to fit the remaining space */
+}
+
+.hyperlink {
+  cursor: default;
+}
+
+.hyperlink:hover {
+  color: #4343fb;
+  cursor: pointer;
+}
+
+.hyperlink:active {
+  color: #93c5fd;
+}
+
+.input-field {
+  display: block;
+  background-color: #f3f4f6; /* bg-gray-50 */
+  border: 1px solid transparent;
+  color: #1f2937; /* text-gray-900 */
+  font-size: 0.875rem; /* text-sm */
+  border-radius: 0.475rem; /* rounded-lg */
+  width: 100%;
+
+  padding: 0.625rem 1rem; /* Taller input field with some left padding */
+}
+
+.input-field:focus {
+  border: 1px solid #000000; /* Blue border on focus */
+}
+
+.input-field.full-width {
+  width: 100% !important;
+}

@@ -1,0 +1,12 @@
+.title-container {
+  display: flex;
+}
+
+.title-text {
+}
+
+@media (max-width: 330px) {
+  .title-text {
+    display: none;
+  }
+}

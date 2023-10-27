@@ -1,0 +1,30 @@
+.upload-file-button,
+.search-filters-button,
+.options-button,
+.sign-in-button,
+.sign-out-button,
+.button-pipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 650px) {
+  .upload-file-button,
+  .search-filters-button,
+  .options-button,
+  .sign-out-button,
+  .button-pipe {
+    display: none;
+  }
+}
+
+.hamburger-menu-icon {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .hamburger-menu-icon {
+    display: block;
+  }
+}

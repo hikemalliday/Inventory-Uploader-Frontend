@@ -1,0 +1,22 @@
+.table-main {
+}
+
+.table-background {
+  background: white;
+  width: 100%;
+}
+
+.table-header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.table-body {
+  margin-top: 30px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.table-main tr,
+.table-body tr {
+  flex: 1;
+}
