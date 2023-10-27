@@ -1,0 +1,35 @@
+name: Deploy Inventory-Uploader-Frontend-Docker from Github to AWS EB
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    run-on:
+      strategy:
+        matrix:
+          node-version: [17.x]
+      steps:
+        - name: Checkout Latest Repo
+          uses: actions/checkout@v2
+
+        - name: Generate Deployment Package
+          run: zip -r deploy-dog-app.zip * -x "**.git**"
+
+        - name: Get timestamp
+          uses: gerred/actions/current-time@master
+          id: current-time
+
+        - name: Run string replace
+          uses: einaregilsson/beanstalk-deploy@v21
+          with:
+            aws_access_key: "${{ secrets.ACCESS_KEY }}"
+            awe_secret_key: "${{ secrets.SECRET_ACCESS_KEY }}"
+            application_name: react-app
+            environment_name: react-app-dev
+            version_label: "app-${{ steps.format-time.outputs.replaced }}"
+            region: us-west-2
+            deployment_package: deploy-react-app.zip
+
+        - name: Deployed!
+          run: frontend App deployed to ELB
