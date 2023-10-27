@@ -40,7 +40,7 @@ jobs:
           environment_name: react-app-dev
           version_label: "app-${{ steps.current-time.outputs.replaced }}"
           region: us-east-1
-          deployment_package: deploy-react-app.zip
+          deployment_package: app.zip
 
       - name: Deployed!
         run: frontend App deployed to ELB
