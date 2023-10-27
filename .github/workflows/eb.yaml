@@ -5,31 +5,42 @@ on:
       - master
 jobs:
   deploy:
-    run-on:
-      strategy:
-        matrix:
-          node-version: [17.x]
-      steps:
-        - name: Checkout Latest Repo
-          uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - name: Checkout Latest Repo
+        uses: actions/checkout@v2
 
-        - name: Generate Deployment Package
-          run: zip -r deploy-dog-app.zip * -x "**.git**"
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-        - name: Get timestamp
-          uses: gerred/actions/current-time@master
-          id: current-time
+      - name: Install dependencies
+        run: npm install
 
-        - name: Run string replace
-          uses: einaregilsson/beanstalk-deploy@v21
-          with:
-            aws_access_key: "${{ secrets.ACCESS_KEY }}"
-            awe_secret_key: "${{ secrets.SECRET_ACCESS_KEY }}"
-            application_name: react-app
-            environment_name: react-app-dev
-            version_label: "app-${{ steps.format-time.outputs.replaced }}"
-            region: us-west-2
-            deployment_package: deploy-react-app.zip
+      - name: Build React App
+        run: npm run build
 
-        - name: Deployed!
-          run: frontend App deployed to ELB
+      - name: Generate Deployment Package
+        run: zip -r app.zip * -x "**.git**"
+
+      - name: Get timestamp
+        id: current-time
+        run: echo "::set-output name=replaced::$(date +'%Y%m%d%H%M%S')"
+
+      - name: Run string replace
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: "${{ secrets.ACCESS_KEY }}"
+          aws_secret_key: "${{ secrets.SECRET_ACCESS_KEY }}"
+          application_name: react-app
+          environment_name: react-app-dev
+          version_label: "app-${{ steps.current-time.outputs.replaced }}"
+          region: us-east-1
+          deployment_package: deploy-react-app.zip
+
+      - name: Deployed!
+        run: frontend App deployed to ELB
