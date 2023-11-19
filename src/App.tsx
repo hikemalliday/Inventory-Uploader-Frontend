@@ -22,14 +22,14 @@ function App() {
     itemSlots: number;
   };
 
-  const [usernameSignIn, setUsernameSignIn] = useState("");
-  const [passwordSignIn, setPasswordSignIn] = useState("");
-  const [invalidPassword, setInvalidPassword] = useState(false);
-  const [usernameIsTaken, setUsernameIsTaken] = useState(false);
-  const [usernameNotFound, setUsernameNotFound] = useState(false);
-  const [itemName, setItemName] = useState("");
-  const [selectedCharName, setSelectedCharName] = useState("All");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [usernameSignIn, setUsernameSignIn] = useState<string>("");
+  const [passwordSignIn, setPasswordSignIn] = useState<string>("");
+  const [invalidPassword, setInvalidPassword] = useState<boolean>(false);
+  const [usernameIsTaken, setUsernameIsTaken] = useState<boolean>(false);
+  const [usernameNotFound, setUsernameNotFound] = useState<boolean>(false);
+  const [itemName, setItemName] = useState<string>("");
+  const [selectedCharName, setSelectedCharName] = useState<string>("All");
+  const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const [inventoryDb, setInventoryDb] = useState<InventoryItem[]>([]);
   const [filteredInventoryDb, setFilteredInventoryDb] = useState<
     InventoryItem[]

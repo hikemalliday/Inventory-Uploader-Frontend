@@ -35,7 +35,7 @@ export const SignInModal = ({
 }: Props) => {
   if (!isSignInModalOpen) return null;
 
-  const [invalidInput, setInvalidInput] = useState(false);
+  const [invalidInput, setInvalidInput] = useState<boolean>(false);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();

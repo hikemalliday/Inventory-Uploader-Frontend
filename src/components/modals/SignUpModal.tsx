@@ -33,9 +33,9 @@ export const SignUpModal = ({
     setUsernameIsTaken(false);
     setInvalidInput(false);
   };
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [invalidInput, setInvalidInput] = useState(false);
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [invalidInput, setInvalidInput] = useState<boolean>(false);
   return ReactDOM.createPortal(
     <>
       <div className="modal-background" onClick={closeModal} />

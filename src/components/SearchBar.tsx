@@ -15,9 +15,6 @@ export const SearchBar = ({
 }: Props) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Call the itemSearch function with the search term
-    console.log(itemName);
-    // if selectedCharName is not 'ALL': logic
     itemSearch(selectedCharName, itemName);
   };
 

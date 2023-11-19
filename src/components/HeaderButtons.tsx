@@ -59,11 +59,12 @@ export const HeaderButtons = ({
   passwordSignIn,
   setPasswordSignIn,
 }: Props) => {
-  const [isUploadFileModalOpen, setUploadFileModal] = useState(false);
-  const [isSearchFiltersModalOpen, setSearchFiltersModal] = useState(false);
-  const [isOptionsModalOpen, setOptionsModal] = useState(false);
-  const [isSignInModalOpen, setSignInModal] = useState(false);
-  const [isHamburgerMenuOpen, setHamburgerMenu] = useState(false);
+  const [isUploadFileModalOpen, setUploadFileModal] = useState<boolean>(false);
+  const [isSearchFiltersModalOpen, setSearchFiltersModal] =
+    useState<boolean>(false);
+  const [isOptionsModalOpen, setOptionsModal] = useState<boolean>(false);
+  const [isSignInModalOpen, setSignInModal] = useState<boolean>(false);
+  const [isHamburgerMenuOpen, setHamburgerMenu] = useState<boolean>(false);
 
   const openUploadFileModal = () => {
     setUploadFileModal(true);

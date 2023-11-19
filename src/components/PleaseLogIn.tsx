@@ -12,7 +12,7 @@ export const PleaseLogIn = ({
   usernameIsTaken,
   setUsernameIsTaken,
 }: Props) => {
-  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState<boolean>(false);
 
   const openModal = () => {
     setIsSignUpModalOpen(!isSignUpModalOpen);

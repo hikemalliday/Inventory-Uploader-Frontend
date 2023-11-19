@@ -40,9 +40,10 @@ export const HamburgerMenu = ({
   itemName,
   isHamburgerMenuOpen,
 }: Props) => {
-  const [isUploadFileModalOpen, setUploadFileModal] = useState(false);
-  const [isSearchFiltersModalOpen, setSearchFiltersModal] = useState(false);
-  const [isOptionsModalOpen, setOptionsModal] = useState(false);
+  const [isUploadFileModalOpen, setUploadFileModal] = useState<boolean>(false);
+  const [isSearchFiltersModalOpen, setSearchFiltersModal] =
+    useState<boolean>(false);
+  const [isOptionsModalOpen, setOptionsModal] = useState<boolean>(false);
 
   const openUploadFileModal = () => {
     setUploadFileModal(true);
