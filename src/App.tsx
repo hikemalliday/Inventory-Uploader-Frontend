@@ -69,8 +69,8 @@ function App() {
 
       if (res.data.loggedIn === true) {
         setLoggedIn(true);
-        const username = localStorage.getItem("username");
-        if (username !== null) localStorage.setItem("username", body.username);
+
+        localStorage.setItem("username", body.username);
         localStorage.setItem("jwtToken", res.data.token);
         setInventoryDb([...res.data.inventory_db]);
         setFilteredInventoryDb([...res.data.inventory_db]);
