@@ -9,9 +9,9 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const apiUrl =
-    import.meta.env.MODE === "production"
-      ? import.meta.env.VITE_APP_API_URL_PROD
-      : import.meta.env.VITE_APP_API_URL_DEV;
+    import.meta.env.SERVER_SIDE === true
+      ? import.meta.env.SERVER_SIDE_URL
+      : import.meta.env.LOCAL_URL;
 
   type InventoryItem = {
     charName: string;
