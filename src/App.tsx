@@ -6,12 +6,10 @@ import Table from "./components/Table";
 import HeaderButtons from "./components/HeaderButtons";
 import PleaseLogIn from "./components/PleaseLogIn";
 import SearchBar from "./components/SearchBar";
+import { SERVER_SIDE_URL, LOCAL_URL, SERVER_SIDE } from "./config.js";
 
 function App() {
-  const apiUrl =
-    import.meta.env.SERVER_SIDE === true
-      ? import.meta.env.SERVER_SIDE_URL
-      : import.meta.env.LOCAL_URL;
+  const apiUrl = SERVER_SIDE === true ? SERVER_SIDE_URL : LOCAL_URL;
 
   type InventoryItem = {
     charName: string;
