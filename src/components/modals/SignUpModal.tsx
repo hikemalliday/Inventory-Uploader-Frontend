@@ -22,7 +22,7 @@ export const SignUpModal = ({
   if (!openModal) return null;
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(username, password);
+
     if (username === "" || password === "") {
       setInvalidInput(true);
       setUsernameIsTaken(false);

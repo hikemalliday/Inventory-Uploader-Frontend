@@ -60,7 +60,6 @@ function App() {
 
   const logIn = async (payload: string[]) => {
     let body = { username: payload[0], password: payload[1] };
-    console.log(body);
 
     try {
       const res = await axios.post(`${apiUrl}/login`, body);
@@ -89,7 +88,6 @@ function App() {
   };
 
   const logOut = async () => {
-    // I think we just remove the localToken and switch boolean:
     localStorage.removeItem("jwtToken");
     setLoggedIn(false);
     setInventoryDb([]);
@@ -115,7 +113,7 @@ function App() {
       try {
         const url = `${apiUrl}/fetchinventory/` + username;
         const res = await axios.get(url);
-        console.log([...res.data.inventory_db]);
+
         setInventoryDb([...res.data.inventory_db]);
         setFilteredInventoryDb([...res.data.inventory_db]);
       } catch (err) {
