@@ -6,7 +6,7 @@
 I have added a 'docker-compose' folder, which contains a docker-compose.yaml. Run this YAML to pull both the backend and frontend images from Docker Hub and launch the website locally.
 
 ###### Docker Hub:
-https://hub.docker.com/repository/docker/hikemalliday/inventory-uploader-frontend/general
+https://hub.docker.com/r/hikemalliday/inventory-uploader-frontend
 
 This is my first project created with ReactJS. It is also my first project to use the web browser built in file submission functionality.
 The table is created with a library called React Table. 
