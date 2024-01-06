@@ -124,8 +124,7 @@ function App() {
 
   const uploadFile = async (file: File) => {
     const formData = new FormData();
-    // Need to send up the username for backend purposes
-
+    
     formData.append("file", file);
     const username = localStorage.getItem("username");
 

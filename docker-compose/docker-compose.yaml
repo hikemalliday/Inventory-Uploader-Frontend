@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: docker.io/hikemalliday/inventory-uploader-frontend:dockerhub
+    ports:
+      - "5175:3002"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    image: docker.io/hikemalliday/inventory-uploader-backend:dockerhub
+    ports:
+      - "8003:8000" 
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
