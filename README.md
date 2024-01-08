@@ -8,6 +8,8 @@ I have added a 'docker-compose' folder, which contains a docker-compose.yaml. Ru
 ###### Docker Hub:
 https://hub.docker.com/r/hikemalliday/inventory-uploader-frontend
 
+The website allows the user to create a username and password. Each unique username has its own table created in the SQLite database on the backend. The user can then upl;oad an Everquest inventory text file. The text file is saved in the unique username's SQLite table.
+
 This is my first project created with ReactJS. It is also my first project to use the web browser built in file submission functionality.
 The table is created with a library called React Table. 
 
