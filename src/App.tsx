@@ -9,7 +9,10 @@ import SearchBar from "./components/SearchBar";
 import { SERVER_SIDE_URL, LOCAL_URL, SERVER_SIDE } from "./config.js";
 
 function App() {
-  const apiUrl = SERVER_SIDE === true ? SERVER_SIDE_URL : LOCAL_URL;
+  const apiUrl =
+    import.meta.env.VITE_APP_HOST_NAME === "LOCAL"
+      ? import.meta.env.VITE_APP_LOCAL_URL
+      : import.meta.env.VITE_APP_SERVER_URL;
 
   type InventoryItem = {
     charName: string;
@@ -124,7 +127,7 @@ function App() {
 
   const uploadFile = async (file: File) => {
     const formData = new FormData();
-    
+
     formData.append("file", file);
     const username = localStorage.getItem("username");
 

@@ -9,11 +9,12 @@ services:
       - backend
     networks:
       - app-network
-
+    environment:
+      - VITE_APP_HOST_NAME=${VITE_APP_HOST_NAME:-LOCAL}
   backend:
     image: docker.io/hikemalliday/inventory-uploader-backend:dockerhub
     ports:
-      - "8003:8000" 
+      - "8003:8000"
     networks:
       - app-network
 
